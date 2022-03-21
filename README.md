@@ -1,5 +1,4 @@
 # test_repo
-for testing
 
 def maximum(a,b,c):
 	if a>b:
