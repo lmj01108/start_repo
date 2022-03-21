@@ -19,4 +19,5 @@ class BankAccount:
 		self.balance -= amount
 
 acc = BankAccount("Mr. Kim", 10476, 30000)
+acc.withdraw(10000)
 acc.show_balance()
