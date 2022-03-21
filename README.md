@@ -18,6 +18,6 @@ a,b,c = int(a), int(b), int(c)
 
 # call the maximum function to find the maximum number among a,b,c
 # and, print that maximum
+print(a, b, c)
 print(maximum(a,b,c))
 
-# 급하게 추가적으로 수정해야할 내용이 생각나서 다시 중복으로 pull request요청
