@@ -1,5 +1,7 @@
 upload for testing
 
+# 컴퓨터공학부 202102395 이명진
+
 class BankAccount:
 	def __init__(self, acc_name=None, acc_number=None, balance=0):
 		self.account_name = acc_name
