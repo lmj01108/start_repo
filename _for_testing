@@ -24,3 +24,15 @@ acc = BankAccount("Mr. Kim", 10476, 30000)
 acc.withdraw(10000)
 acc.show_balance()
 acc.deposit(20000)
+
+def maximum(a,b,c):
+	if a>b:
+		if a>c:
+			return a
+		else:
+			return c
+	else:
+		if b>c:
+			return b
+		else:
+			return c
