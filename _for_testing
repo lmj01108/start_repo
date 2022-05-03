@@ -19,6 +19,9 @@ class BankAccount:
 	
 	def withdraw(self, amount):
 		self.balance -= amount
+	
+	def double(self):
+		self.balance *=2
 
 acc = BankAccount("Mr. Kim", 10476, 30000)
 acc.withdraw(10000)
