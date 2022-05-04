@@ -35,14 +35,14 @@ class LinkedList:
 
 		def insert_first(self, item): # insert before head
 			new_node = Node(item)
-			self.insert_node(p=None, new_node=new_node)
+			self.insert_node(p=None, new_node=new_node) #이전 노드가 없어서 p는 None
 			
 		def insert_last(self, item): # insert after tail
-			new_node = Node(item)
-			p = self.head
-			while p is not None and p.link is not None:
+			new_node = Node(item) # 새 노드를 가져옴
+			p = self.head # 마지막 노드이기 때문에 p값이 있음
+			while p is not None and p.link is not None: #p.link가 none이면 p가 tail
 				p = p.link
-			self.insert_node(p=p, new_node = new_node)	
+			self.insert_node(p=p, new_node = new_node)#	
 
 		def search(self, item): # returns the node holding item
 			node = self.head
@@ -63,12 +63,11 @@ class LinkedList:
 			return None, p	
 
 		def delete(self, item):
-			removed ,p= self.search_prev(item) 
-			if removed is None: 
+			removed ,p= self.search_prev(item) #search_prev으로 node찾기
+			if removed is None: # removed는 삭제하려는 값임, 만약 이 값이 없다면
 				print("Item not found")
 				return
-			
-			self.delete_node(p=p, removed = removed)
+			self.delete_node(p=p, removed = removed) #delete_node로 삭제
 			
 		def reverse(self):
 			p = None
@@ -90,7 +89,7 @@ while True:
 	elif cmd == "reverse":
 			L.reverse()
 	else:
-		cmd, param = cmd.split()
+		cmd, param = cmd.split() #cmd를 콜하기 위한 코드
 		if cmd == "ins_first":
 			L.insert_first(int(param))
 		elif cmd == "ins_last":
@@ -103,9 +102,7 @@ while True:
 			L.delete(int(param))
 		
 
-
-
-
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 
 
