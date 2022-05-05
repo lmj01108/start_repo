@@ -1,3 +1,55 @@
+#2022.4.6
+#Stack_01 : parantheses inspection
+class Stack:
+	def __init__(self):
+		self.data = [] #initialize with anempty list
+		
+	def size(self):
+		return len(self.data)
+	
+	def is_empty(self):
+		return self.size() == 0 #True if empty, False otherwise
+	
+	def push(self, element):
+		self.data.append(element)
+		
+	def pop(self):
+		if self.is_empty():
+			return "error"
+		return self.data.pop()
+	
+	def top(self):
+		if self.is_empty():
+			return "error"
+		return self.data[-1] # -1 : the last one
+	
+T = int(input())
+for tc in range(1, T+1):
+		sentence = input()
+		l = len(sentence)
+		lst = []
+		for s in sentence:#( 이나 {이면 lst에 담음
+			if s=='(' or s=='{':
+				lst.append(s)#) 이나 }이 나오면 (나 { 전에 나왔는지 확인
+			elif s==')' or s=='}':
+				if len(lst)==0:
+					False
+					#적절하게 짝이 이루어졌는지 확인
+					elif s==')' and lst.pop() =='{':
+						False
+					elif s=='}' and lst.pop() =='(':
+						False
+						#괄호가 모두 짝이 맞게 닫혔는지 확인
+						if len(lst):
+							result=0
+
+
+	print('#{} {}'.format(tc, result))
+	
+	
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
 #2022.4.19 
 #Linkedlist_lab
 class Node:
