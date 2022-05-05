@@ -3,21 +3,16 @@
 class Stack:
 	def __init__(self):
 		self.data = [] #initialize with anempty list
-		
 	def size(self):
 		return len(self.data)
-	
 	def is_empty(self):
 		return self.size() == 0 #True if empty, False otherwise
-	
 	def push(self, element):
 		self.data.append(element)
-		
 	def pop(self):
 		if self.is_empty():
 			return "error"
 		return self.data.pop()
-	
 	def top(self):
 		if self.is_empty():
 			return "error"
@@ -43,37 +38,30 @@ for tc in range(1, T+1):
 						if len(lst):
 							result=0
 
-
-	print('#{} {}'.format(tc, result))
+		print('#{} {}'.format(tc, result))
 	
 	
 
 #Stack_02 : infix-to-postfix
 class Stack:
 	def __init__(self):
-		self.data = [] #initialize with anempty list
-		
+		self.data = [] #initialize with anempty list	
 	def size(self):
 		return len(self.data)
-	
 	def is_empty(self):
 		return self.size() == 0 #True if empty, False otherwise
-	
 	def push(self, element):
 		self.data.append(element)
-		
 	def pop(self):
 		if self.is_empty():
 			return "error"
 		return self.data.pop()
-	
 	def top(self):
 		if self.is_empty():
 			return "error"
 		return self.data[-1] # -1 : the last one
 	
-	#Infix-to-postfix
-	#초기화
+#Infix-to-postfix #초기화
 infix = input()
 postfix = []
 s = Stack()
@@ -108,8 +96,8 @@ postfix = "".join(postfix)
 print(postfix)
 	
 	
-
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
 
 #2022.4.19 
 #Linkedlist_lab
@@ -120,7 +108,6 @@ class Node:
 class LinkedList:
 		def __init__(self):	
 			self.head = None
-
 		def print_list(self):
 			node = self.head
 			print('h->', end="")
@@ -128,7 +115,6 @@ class LinkedList:
 				print("{}->".format(node.item), end="")
 				node = node.link
 			print(None)
-		
 		def insert_node(self, p, new_node):
 			if self.head is None:
 				self.head = new_node
@@ -138,25 +124,21 @@ class LinkedList:
 			else:
 				new_node.link = p.link
 				p.link = new_node
-
 		def delete_node(self, p, removed):
 			if removed == self.head:
 				self.head = removed.link
 			else:
 				p.link = removed.link
 			del removed
-
 		def insert_first(self, item): # insert before head
 			new_node = Node(item)
 			self.insert_node(p=None, new_node=new_node) #이전 노드가 없어서 p는 None
-			
 		def insert_last(self, item): # insert after tail
 			new_node = Node(item) # 새 노드를 가져옴
 			p = self.head # 마지막 노드이기 때문에 p값이 있음
 			while p is not None and p.link is not None: #p.link가 none이면 p가 tail
 				p = p.link
 			self.insert_node(p=p, new_node = new_node)#	
-
 		def search(self, item): # returns the node holding item
 			node = self.head
 			while node is not None:
@@ -164,7 +146,6 @@ class LinkedList:
 					return node
 				node = node.link
 			return None
-
 		def search_prev(self, item): # returns the node holding item and the previous node
 			p = None
 			node = self.head
@@ -174,14 +155,12 @@ class LinkedList:
 				p = node
 				node = node.link
 			return None, p	
-
 		def delete(self, item):
 			removed ,p= self.search_prev(item) #search_prev으로 node찾기
 			if removed is None: # removed는 삭제하려는 값임, 만약 이 값이 없다면
 				print("Item not found")
 				return
 			self.delete_node(p=p, removed = removed) #delete_node로 삭제
-			
 		def reverse(self):
 			p = None
 			node = self.head
