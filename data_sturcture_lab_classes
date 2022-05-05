@@ -48,6 +48,67 @@ for tc in range(1, T+1):
 	
 	
 
+#Stack_02 : infix-to-postfix
+class Stack:
+	def __init__(self):
+		self.data = [] #initialize with anempty list
+		
+	def size(self):
+		return len(self.data)
+	
+	def is_empty(self):
+		return self.size() == 0 #True if empty, False otherwise
+	
+	def push(self, element):
+		self.data.append(element)
+		
+	def pop(self):
+		if self.is_empty():
+			return "error"
+		return self.data.pop()
+	
+	def top(self):
+		if self.is_empty():
+			return "error"
+		return self.data[-1] # -1 : the last one
+	
+	#Infix-to-postfix
+	#초기화
+infix = input()
+postfix = []
+s = Stack()
+	
+precedence = {'+': 0, '-' : 0, '/' : 1, "*" : 1, '(' : 2}
+	
+for ch in infix : 
+	#case 1: ch is operator or left bracket
+	if ch in '+-/*(' : 
+		while not s.is_empty() and precedence[ch] <= precedence[s.top()]:
+			if s.top() == '(' :
+				break
+			op = s.pop()
+			postfix.append(op)
+		s.push(ch)
+	elif ch == ')':# case2: reight bracket
+		#pop until left bracket
+		while not s.is_empty() and s.top() != '(':
+			op = s.pop()
+			postfix.append(op)
+		s.pop() #pop the left bracket '('
+		
+	else: #operand
+		#directly output to postfix
+		postfix.append(ch)
+		
+while not s.is_empty():
+				op = s.pop()
+				postfix.append(op)
+		
+postfix = "".join(postfix)
+print(postfix)
+	
+	
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 #2022.4.19 
