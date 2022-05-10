@@ -461,6 +461,9 @@ class Node:
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
+# 2022.5.11 Wed
+# Binary search tree
+
 """ Binary Search Tree Class """
 class BinarySearchTree:
 	def __init__(self, root=None):
