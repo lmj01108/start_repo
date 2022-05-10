@@ -21,4 +21,14 @@ endmodule (세미콜론 없음)
 
 출처: https://ssmsig.tistory.com/53 [온라인 개인맞춤형 SIGMA!!]
 
+
+input: 입력값을 받는 변수, input의 데이터 타입은 무조건 wire. reg가 될 수 없음
+output: 출력값을 내는 변수
+inout: 입출력.
+
+wire: 실제로 회로를 물리적으로 연결하는 타입
+reg: 데이터 저장 가능한 타입
+
+
+
 */
