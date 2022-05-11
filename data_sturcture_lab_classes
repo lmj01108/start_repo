@@ -484,9 +484,15 @@ class BinarySearchTree:
 	""" returns node holding key and its parent"""
 	def search_p(self, key): 
 		root, parent = self.root, None
-		while root is not None:
-			#....
-			pass
+		while root is not None: #root가 None이면 더이상 탐색할 노드가 없다.
+			if key == root.key(): #key에 해당하는 node를 찾음
+				break
+			elif key < root.key(): #왼쪽 서브트리로 이동
+				parent = root
+				root = root.left
+			elif key > root.key(): #오른쪽 서브트리로 이동
+				parent = root
+				root = root.right
 		return root, parent
 	
 	def insert(self, key, value=None):
