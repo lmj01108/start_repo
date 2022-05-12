@@ -33,5 +33,6 @@ reg: 데이터 저장 가능한 타입
 
 /*
 EDA playground - testbench & design
+full-adder - two half-adders & one or 
 
 */
