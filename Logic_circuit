@@ -29,6 +29,9 @@ inout: 입출력.
 wire: 실제로 회로를 물리적으로 연결하는 타입
 reg: 데이터 저장 가능한 타입
 
+*/
 
+/*
+EDA playground - testbench & design
 
 */
