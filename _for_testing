@@ -43,4 +43,18 @@ def maximum(a,b,c):
 a,b,c = input().split() #스페이스기준으로 문자열을 찢어서 각 요소의 리스트를 만들 수 있음
 a,b,c = int(a), int(b), int(c)
 
-print("입력한 숫자: ", a, b, c)			
+print("입력한 숫자: ", a, b, c)		
+
+class Node:
+	def __init__(self, key=None, value=None, left=None, right=None):
+		self.item = (key, value)
+		self.left, self.right = left, right
+		
+	def key(self):
+		return self.item[0]
+
+	def value(self):
+		return self.item[1]
+
+	def set_value(self, value):
+		self.item[1] = value
