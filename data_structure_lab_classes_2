@@ -22,14 +22,14 @@ class BinarySearchTree:
 	def __init__(self, root=None):
 		self.root = root
 	
-	def search(self, key): # loop version
+	def search(self, key): # loop version ; key값 찾기
 		root = self.root
 		while root is not None:
 			if key == root.key():
 				break
-			elif key < root.key():
+			elif key < root.key(): #찾으려는 값이 root값 보다 작으면 왼쪽값을 root로 대입
 				root = root.left
-			elif key > root.key():
+			elif key > root.key(): #찾으려는 값이 root값 보다 작으면 오른쪽 값을 root로 대입
 				root = root.right
 		
 		return root
