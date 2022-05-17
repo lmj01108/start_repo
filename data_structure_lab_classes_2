@@ -35,7 +35,7 @@ class BinarySearchTree:
 		return root
 	
 	""" returns node holding key and its parent"""
-	def search_p(self, key): 
+	def search_p(self, key): #key값과 해당 노드의 부모노드 값 찾기
 		root, parent = self.root, None
 		while root is not None: #root가 None이면 더이상 탐색할 노드가 없다.
 			if key == root.key(): #key에 해당하는 node를 찾음
@@ -50,7 +50,7 @@ class BinarySearchTree:
 	
 	def insert(self, key, value=None):
 		node, p = self.search_p(key) # 존재하는지 확인
-		if node is not None and k==node.key():
+		if node is not None and k == node.key():
 			node.set_value(value)
 			return node
 		
@@ -82,18 +82,18 @@ class BinarySearchTree:
 		
 		# B. REPLACE node-to-child(s) link(s) IF <rep_node> exists
 		# case-1: <rep_node> is <node>'s left child  --> Do nothing 이런경우는 있을 수 없음
-		if node.left is None and node.right is None:
+		if node.left is None and node.right is None: #삭제할 노드의 자식노드가 없으면 대체할 값이 없음 rep_node = None
 			rep_node = None
 			
-		else:
+		else: # 삭제할 노드의 자식노드가 있는 경우의 케이스 3종류
 			if rep_node == node.left:
 				pass
 		# case-2: <rep_node> is <node>'s right child --> replace the left link IF node.left exists
-			elif rep_node == node.right and node.left is not None:
-				rep_node.left = node.left
+			elif rep_node == node.right and node.left is not None: # rep_node가 삭제될 노드의 오른쪽 자식 노드이면서 삭제할 노드의 왼쪽 자식도 존재하는 경우
+				rep_node.left = node.left # 자식간의 link 변경
 		# case-3: <rep_node> is not <node>'s child --> replace both left and right links
-			elif node is not rep_p:
-				rep_node.left = node.left
+			elif node is not rep_p: #rep_node가 node의 자식노드가 아닐 경우
+				rep_node.left = node.left # rep_node의 좌우 자식노드들 모두 node의 자식노드들로 변경
 				rep_node.right = node.right
 		# C. DELETE <rep_p> to <rep_node> link (already coded below)
 		rep_p.left = None
