@@ -2,7 +2,7 @@ upload for testing
 
 # 컴퓨터공학부 202102395 이명진
 
-class BankAccount:
+class BankAccount: # 은행계좌 클래스
 	def __init__(self, acc_name=None, acc_number=None, balance=0):
 		self.account_name = acc_name
 		self.account_number = acc_number
@@ -28,7 +28,7 @@ acc.withdraw(10000)
 acc.show_balance()
 acc.deposit(20000)
 
-def maximum(a,b,c):
+def maximum(a,b,c): # 최댓값 출력 함수
 	if a>b:
 		if a>c:
 			return a
@@ -45,7 +45,7 @@ a,b,c = int(a), int(b), int(c)
 
 print("입력한 숫자: ", a, b, c)		
 
-class Node:
+class Node: # node 클래스
 	def __init__(self, key=None, value=None, left=None, right=None):
 		self.item = (key, value)
 		self.left, self.right = left, right
