@@ -46,3 +46,24 @@ game/
 
 # pygame 
 # vscode나 python에서 라이브러리 다운 - pip install pygame 
+/*
+# 내장함수
+map(적용시킬 함수, 적용할 값들) - 백준 문제풀이에서 두 수를 받아 나눌 때 사용
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
