@@ -4,5 +4,6 @@ github 블로그 만드는 방법 정리
 2. fork & document 확인
 3. setting - repository name을 무조건 아이디로 rename ex.아이디.github.io
 4. _config.yml 파일에서 url 수정 - url의 주석 삭제 후 내 아이디 입력 -> commit
-5. 새로운 포스팅 생성 - feat.markdowm
+5. 새로운 포스팅 생성 addfile - 새로운 포스팅 생성시 년/월/일 과 확장자 입력해 주어야 함
+    - feat.markdowm syntex
 6. _config.yml에서 테마도 변경가능
