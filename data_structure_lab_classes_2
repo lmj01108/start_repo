@@ -144,9 +144,9 @@ class BinarySearchTree:
 			print(root.key(), end=" ")
 			self.inorder(root.right)
 	
-	
+# 2022.5.18 Wed : No class	
 
-# 2022.5.26 Wed
+# 2022.5.26 Wed - Gragh _asic_DFS
 
 class Graph:
 	def __init__(self, N=1000):
