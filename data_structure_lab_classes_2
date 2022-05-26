@@ -191,27 +191,7 @@ class DFS:
 		for v in range(self.N):
 			if self.V_label[v] == self.UNEXPLORED:
 				self.dfs(v)
-		class Graph:
-	def __init__(self, N=1000):
-		self.N = N
-		# Create 2D list M: M[i][j] = 1, if edge (i,j) exists
-		self.M = [[0 for _ in range(N)] for _ in range(N)]
-	
-	def insert_edge(self, v1, v2):
-		# this is an undirected graph
-		self.M[v1][v2] = 1
-		self.M[v2][v1] = 1
-		pass
-	
-	def adjacent_vertices(self, v):
-		# return the adjacent (or linked) vertices to v
-		vs = []
-		for j in range(self.N):
-			if self.M[v][j] == 1:
-				vd.append(j)
-		return vs
-	
-
+		
 class DFS:
 	def __init__(self, G):
 		# Graph Info
