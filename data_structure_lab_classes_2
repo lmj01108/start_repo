@@ -192,29 +192,7 @@ class DFS:
 			if self.V_label[v] == self.UNEXPLORED:
 				self.dfs(v)
 		
-class DFS:
-	def __init__(self, G):
-		# Graph Info
-		self.G = G
-		self.N = G.N
-		
-		# Vertex and Edge Labels
-		# FOR LABELING, use EXACTLY these labels
-		self.UNEXPLORED, self.VISITED = 'unxp', 'vstd' #vertex에 관한 라벨
-		self.DISCOVERY, self.BACK = 'dscv', 'back' # edge에 관란 라벨
-		
-		# Initialize Vertex and Edge Labels 
-		self.V_label = [self.UNEXPLORED for _ in range(N)]
-		self.E_label = [[self.UNEXPLORED for _ in range(N)] for _ in range(N)]
-		
-		# Vertex Visiting Order during DFS
-		self.visit_order = []
-		
-		# Run DFS
-		for v in range(self.N):
-			if self.V_label[v] == self.UNEXPLORED:
-				self.dfs(v)
-		
+
 	def dfs(self, v):
 		 
 		
