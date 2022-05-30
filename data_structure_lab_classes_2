@@ -194,13 +194,17 @@ class DFS:
 		
 
 	def dfs(self, v):
-		 
-		
+		 # label v as VISITED
+		 # and append v to visit_order list
 		
 		v_adj = self.G.adjacent_vertices(v)
 		for w in v_adj:
-			if self.M[v][w] and self.M[w][v] == self.UNEXPLORED:
-				if
+			if self.M[v][w] and self.M[w][v] == self.UNEXPLORED: # if edge (v,w) and (w,v) is UNEXPLORED
+				if # if w is UNEXPLORED:
+				# label edge (v,w) as DISCOVERY
+				# call dfs(w)
+			# else:
+				# label edge (v,w) as back
 			
 				
 					
