@@ -199,7 +199,7 @@ class DFS:
 		
 		v_adj = self.G.adjacent_vertices(v)
 		for w in v_adj:
-			if self.M[v][w] and self.M[w][v] == self.UNEXPLORED: # if edge (v,w) and (w,v) is UNEXPLORED
+			if self.E_label[v][w] and self.E_label[w][v] == self.UNEXPLORED: # if edge (v,w) and (w,v) is UNEXPLORED
 				if self.V_label[w] == UNEXPLORED: # if w is UNEXPLORED:
 					# label edge (v,w) as DISCOVERY
 					# call dfs(w)
