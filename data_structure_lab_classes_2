@@ -201,19 +201,11 @@ class DFS:
 		for w in v_adj:
 			if self.E_label[v][w] and self.E_label[w][v] == self.UNEXPLORED: # if edge (v,w) and (w,v) is UNEXPLORED
 				if self.V_label[w] == UNEXPLORED: # if w is UNEXPLORED:
-					# label edge (v,w) as DISCOVERY
-					# call dfs(w)
-			# else:
-				self.M[v][w] = self.BACK # label edge (v,w) as back
+					self.E_label[v][w] = self.DISCOVERY # label edge (v,w) as DISCOVERY
+					self.dfs(v) # call dfs(w)
+			else:
+				self.E_label[v][w] = self.BACK # label edge (v,w) as back
 			
-				
-					
-					
-				
-					
-		
-		pass
-		
 
 """ DO NOT CHANGE THE MAIN SCRIPT BELOW """
 		
