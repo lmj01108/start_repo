@@ -8,7 +8,10 @@
   flip-flop : clock pulse를 사용하는 메모리
 
 
-  Latches - 결과의 의미 해석이 중요
+  Latches - clock 입력을 가지지 않는 기억소자, SR latch와 D latch 가 있음
+  Flip-flop - clock 입력을 가져 이에 반응하여 출력의 상태를 바꾸는 기억소자
+  
+  clock : 출력을 제어하는 
   
     1. SR latch - two cross-coupled NOR gates or two cross-coupled NAND gates & two input labeled S for set and R for reset
     2. 
