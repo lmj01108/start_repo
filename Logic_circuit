@@ -11,8 +11,6 @@
   Latches - clock 입력을 가지지 않는 기억소자, SR latch와 D latch 가 있음
   Flip-flop - clock 입력을 가져 이에 반응하여 출력의 상태를 바꾸는 기억소자
   
-  clock : 출력을 제어하는 
-  
     1. SR latch - 입력 R, S와 출력 Q에 의해 다음 출력 Q(t+1)이 결정됨 S=R=1이면 Q=?이 되기 때문에 모순 발생
     2. D latch - SR latch 앞에 AND 게이트가 있고 입력 D와 SR 래치 동작을 제어해주는 G 입력으로 구성
 
