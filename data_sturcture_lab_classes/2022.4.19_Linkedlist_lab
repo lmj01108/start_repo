@@ -1,0 +1,95 @@
+
+#2022.4.19 
+#Linkedlist_lab
+class Node:
+	def __init__(self, item=None, link=None):
+		self.item, self.link = item, link
+
+class LinkedList:
+		def __init__(self):	
+			self.head = None
+		def print_list(self):
+			node = self.head
+			print('h->', end="")
+			while node is not None:
+				print("{}->".format(node.item), end="")
+				node = node.link
+			print(None)
+		def insert_node(self, p, new_node):
+			if self.head is None:
+				self.head = new_node
+			elif p is None:
+				new_node.link = self.head
+				self.head = new_node
+			else:
+				new_node.link = p.link
+				p.link = new_node
+		def delete_node(self, p, removed):
+			if removed == self.head:
+				self.head = removed.link
+			else:
+				p.link = removed.link
+			del removed
+		def insert_first(self, item): # insert before head
+			new_node = Node(item)
+			self.insert_node(p=None, new_node=new_node) #이전 노드가 없어서 p는 None
+		def insert_last(self, item): # insert after tail
+			new_node = Node(item) # 새 노드를 가져옴
+			p = self.head # 마지막 노드이기 때문에 p값이 있음
+			while p is not None and p.link is not None: #p.link가 none이면 p가 tail
+				p = p.link
+			self.insert_node(p=p, new_node = new_node)#	
+		def search(self, item): # returns the node holding item
+			node = self.head
+			while node is not None:
+				if node.item == item:
+					return node
+				node = node.link
+			return None
+		def search_prev(self, item): # returns the node holding item and the previous node
+			p = None
+			node = self.head
+			while node is not None:
+				if node.item == item :
+					return node, p
+				p = node
+				node = node.link
+			return None, p	
+		def delete(self, item):
+			removed ,p= self.search_prev(item) #search_prev으로 node찾기
+			if removed is None: # removed는 삭제하려는 값임, 만약 이 값이 없다면
+				print("Item not found")
+				return
+			self.delete_node(p=p, removed = removed) #delete_node로 삭제
+		def reverse(self):
+			p = None
+			node = self.head
+			while node is not None:
+				new_node = node.link
+				node.link = p
+				p = node
+				node = new_node
+			self.head = p	
+
+L = LinkedList()
+while True:
+	cmd = input()
+	if cmd == "exit":
+		break
+	elif cmd == "print":
+		L.print_list()
+	elif cmd == "reverse":
+			L.reverse()
+	else:
+		cmd, param = cmd.split() #cmd를 콜하기 위한 코드
+		if cmd == "ins_first":
+			L.insert_first(int(param))
+		elif cmd == "ins_last":
+			L.insert_last(int(param))
+		elif cmd == "find":
+			node = L.search(int(param))
+			if node is None: print('Item Not Found')
+			else: print("{} Found".format(node.item))
+		elif cmd == "del":
+			L.delete(int(param))
+		
