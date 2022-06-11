@@ -1,0 +1,55 @@
+# for_logic_circuit_review
+
+/*
+EDA playground - testbench & design
+full-adder - two half-adders & one or 
+
+design code
+module half_adder(x,y,s,c); //변수 순서 주의
+  input x,y;
+  output c,s;
+  
+  //s= x XOR y 내장함수는 변수 순서 정해져있음 - output이 먼저, 그 후에 input
+  xor xor1(s,x,y);
+  //c= x AND y
+  and and1(c,x,y);
+  
+endmodule
+
+module full_adder(x,y,z,c,s);
+  input x,y,z;
+  output c,s;
+  wire c1, s1, c2; // 중간 & 결과 연산값
+  
+  // ha1, ha2, or1
+  half_adder hal1(x, y, s1, c1);
+  half_adder hal2(s1, z , s, c2); // 입출력 주의
+  or or1(c, c2, c1);
+endmodule
+
+
+testbench code
+module full_adder_tb;
+  reg x,y,z;
+  wire c,s;
+  
+  full_adder fa1(x,y,z,c,s);
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(1);
+    
+    
+    x=0;y=0;z=0; //간격 10
+    #10 x=0;y=1;z=0;
+    #10 x=1;y=0;z=0;
+    #10 x=1;y=1;z=0;
+    #10 x=0;y=0;z=1;
+    #10 x=0;y=1;z=1;
+    #10 x=1;y=0;z=1;
+    #10 x=1;y=1;z=1;
+    
+    end  
+  initial #200 $finish;
+endmodule
+*/
