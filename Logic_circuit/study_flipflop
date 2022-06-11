@@ -1,0 +1,25 @@
+# for_logic_circuit_review
+
+/*
+1. sequential circuit_flip-flop
+
+  sequential circuit = combination circuit + memory element
+  sequential circuit에 사용되는 memory element를 flip-flop이라고 한다.
+  flip-flop : clock pulse를 사용하는 메모리
+
+
+  Latches - clock 입력을 가지지 않는 기억소자, SR latch와 D latch 가 있음
+  Flip-flop - clock 입력을 가져 이에 반응하여 출력의 상태를 바꾸는 기억소자
+  Clock - 출력을 제어하는 입력(Ck)
+  
+  flip-flop 종류 - 상승 에지트리거 / 하강 에지트리거
+      상승에지트리거 : 0에서 1로 바뀌는 구간 ex. 상승에지에서 변하는 소자이면 0에서 1로 바뀌는 상승에지에서만 입력값들이 
+      하강이지트리거 : 1에서 0으로 바뀌는 구간
+  
+   1. SR latch - 입력 R, S와 출력 Q에 의해 다음 출력 Q(t+1)이 결정됨 S=R=1이면 Q=?이 되기 때문에 모순 발생
+   2. D latch - SR latch 앞에 AND 게이트가 있고 입력 D와 SR 래치 동작을 제어해주는 G 입력으로 구성
+
+   1. SR flip flop
+      s=1이면 Q(t+1)=1 / R=1이면 Q(t+1)=0 / S=R=0이면 Q(t+1)=Q / S=R=1 은 허용되지 않음
+      SR latch 와 차이점: flip flop은 clock 입력을 가지고 상승 에지에서 동작함
+*/
