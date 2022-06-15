@@ -9,7 +9,8 @@ def preorder(root):
 		preorder(root.right)
 
 def inorder(root):
-	pass
+	if root is not None:
+		print()
 
 def postorder(root):
 	pass
