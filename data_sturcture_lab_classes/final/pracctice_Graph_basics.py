@@ -6,16 +6,16 @@ class Graph:
 	
 	def insert_edge(self, v1, v2):
 		# this is an undirected graph
-		
-		pass
+		self.M[v1][v2]=1
+		self.M[v2][v1]=1
 	
 	def adjacent_vertices(self, v):
 		# return the adjacent (or linked) vertices to v
 		vs = []
-		
-		
-		
-		return vs
+		for j in range(self.N):
+			if self.M[v][j]=1: # 연결되어있으면 vs 리스트에 
+				vs.append(j)
+		return vs	
 	
 
 class DFS:
