@@ -10,10 +10,15 @@ def preorder(root):
 
 def inorder(root):
 	if root is not None:
-		print()
+		inorder(root.left)
+		print(root.item., end=" ")
+		inrder(root.right)
 
 def postorder(root):
-	pass
+	if root is not None:
+		print(root.left)
+		print(root.right)
+		print(root.item., end=" ")
 
 def search(root, x):
 	return None
