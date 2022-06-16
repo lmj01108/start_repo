@@ -42,20 +42,18 @@ class DFS:
 				self.dfs(v)
 		
 	def dfs(self, v):
-		 
-		
+		self.V_label[v] = self.VISITED # vertex V 방문
+		self.visit_order.append(v) # list에 추가
 		
 		v_adj = self.G.adjacent_vertices(v)
 		for w in v_adj:
-			
+			if self.E_label[v][w] == self.UNEXPLORED and self.E_label[w][v] == self.UNEXPLORED:
+				if self.V_label[w] == self.UNEXPLORED:
+					self.E_label[v][w] = self.DISCOVERY
+					self.dfs(w)
+				else:
+					self.E_label[v][w] = self.BACK
 				
-					
-					
-				
-					
-		
-		pass
-		
 
 """ DO NOT CHANGE THE MAIN SCRIPT BELOW """
 		
