@@ -16,8 +16,8 @@ def inorder(root):
 
 def postorder(root):
 	if root is not None:
-		print(root.left)
-		print(root.right)
+		postorder(root.left)
+		postorder(root.right)
 		print(root.item., end=" ")
 
 def search(root, x):
