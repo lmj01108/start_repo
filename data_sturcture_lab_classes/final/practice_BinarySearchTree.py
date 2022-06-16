@@ -62,15 +62,27 @@ class BinarySearchTree:
 		
 		# A. REPLACE p-to-node link
 		# case-1: node is root (p is None)
-		# case-2: node is p.left
-		# case-3: node is p.right
+		if p is None:
+			self.root = rep_node #삭제될 노드의 부모가 없으면 대체될 노드가 루트가 됨
+		# case-2: node is p.right
+		elif node == p.right:
+			p.right = rep_node
+		# case-3: node is p.left
+		else:
+			p.left = rep_node
 		
 		
 		# B. REPLACE node-to-child(s) link(s) IF <rep_node> exists
 		# case-1: <rep_node> is <node>'s left child  --> Do nothing
 		# case-2: <rep_node> is <node>'s right child --> replace the left link IF node.left exists
 		# case-3: <rep_node> is not <node>'s child --> replace both left and right links
-		
+		if rep_node is not None:#삭제될 노드가 잎이면 대체 값이 없음
+			if rep_p == node:
+				if rep_node == node.right and node.left is not None:
+					rep_node.left = node.left
+				else:
+					rep_node.left = node.left
+					rep_node.right = node.right
 		
 		# C. DELETE <rep_p> to <rep_node> link (already coded below)
 		rep_p.left = None
