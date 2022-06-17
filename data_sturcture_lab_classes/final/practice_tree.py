@@ -37,11 +37,14 @@ def insert_simple(p, side, x):
 			node_p.right = Node(x)
 
 def size(root):
-	return 0
+	if root is None:
+		return 0
+	return 1+size(root.left)+size(root.right)
 
 def height(root):
-	return 0
-
+	if root is None:
+		return -1
+	return 1+max(height(root.left), height(root.right))
 
 
 root = None
